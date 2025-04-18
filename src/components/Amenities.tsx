@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Wifi, Pool, Utensils, Car, Flame, Dog, Tv, Bath, Bell, Bike, Lock, Sofa } from 'lucide-react';
+import { Wifi, Waves, Utensils, Car, Flame, Dog, Tv, Bath, Bell, Bike, Lock, Sofa } from 'lucide-react';
 
 const AmenityItem = ({ icon: Icon, title }: { icon: React.ElementType; title: string }) => (
   <div className="flex flex-col items-center text-center gap-3 p-4">
@@ -14,7 +14,7 @@ const AmenityItem = ({ icon: Icon, title }: { icon: React.ElementType; title: st
 const Amenities = () => {
   const amenities = [
     { icon: Wifi, title: "Free Wi-Fi" },
-    { icon: Pool, title: "Swimming Pool" },
+    { icon: Waves, title: "Swimming Pool" },
     { icon: Utensils, title: "Full Kitchen" },
     { icon: Car, title: "Free Parking" },
     { icon: Flame, title: "Fireplace" },

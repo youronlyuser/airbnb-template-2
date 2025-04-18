@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Bed, Bath, CheckSquare, Pool } from 'lucide-react';
+import { Bed, Bath, CheckSquare, Waves } from 'lucide-react';
 
 const StayDetails = () => {
   return (
@@ -47,7 +47,7 @@ const StayDetails = () => {
           {/* Private Pool */}
           <div className="bg-white rounded-xl shadow-sm p-6 flex flex-col items-center text-center hover:shadow-md transition">
             <div className="bg-teal-50 p-4 rounded-full mb-4">
-              <Pool size={32} className="text-teal-600" />
+              <Waves size={32} className="text-teal-600" />
             </div>
             <h3 className="text-xl font-semibold mb-2">Private Pool</h3>
             <p className="text-gray-600">
