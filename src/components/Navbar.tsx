@@ -1,10 +1,10 @@
-
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const NAV_LINKS = [
+  { to: "/", label: "Home" },
   { to: "/your-host", label: "Your Host" },
   { to: "/your-place", label: "Your Place" },
   { to: "/explore", label: "Explore" },

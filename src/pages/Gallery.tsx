@@ -1,5 +1,7 @@
 
 import React, { useState } from "react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import * as LucideIcons from "lucide-react";
 
 const TABS = [
@@ -48,73 +50,77 @@ export default function Gallery() {
   }
 
   return (
-    <main className="min-h-screen bg-gray-50 py-12 px-2 md:px-4">
-      <section className="max-w-6xl mx-auto bg-white rounded-3xl shadow-xl p-6 md:p-12">
-        <h1 className="text-2xl md:text-4xl font-bold mb-6 text-center">Gallery</h1>
-        <div className="flex flex-wrap gap-2 justify-center mb-8">
-          {TABS.map(tab => (
-            <button
-              key={tab.key}
-              type="button"
-              aria-pressed={selected === tab.key}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition
-                ${selected === tab.key
-                  ? "bg-teal-500 text-white shadow"
-                  : "bg-teal-50 text-teal-700 hover:bg-teal-100"}
-              `}
-              onClick={() => setSelected(tab.key)}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-          {images.map((img, i) => (
-            <button
-              key={img.url + i}
-              type="button"
-              className="aspect-square rounded-lg overflow-hidden group focus:outline-teal-500"
-              onClick={() => openModal(i)}
-              aria-label={`View ${img.alt} in fullscreen`}
-            >
-              <img
-                src={img.url}
-                alt={img.alt}
-                className="object-cover w-full h-full group-hover:scale-105 transition-transform"
-                draggable={false}
-              />
-            </button>
-          ))}
-        </div>
-
-        {lightbox && (
-          <div
-            className="fixed inset-0 bg-black/60 flex items-center justify-center z-50"
-            tabIndex={-1}
-            aria-modal="true"
-            role="dialog"
-          >
-            <button className="absolute top-4 right-4 text-white text-2xl" onClick={closeModal} aria-label="Close gallery">
-              <LucideIcons.X size={32} />
-            </button>
-            <button
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-white text-2xl"
-              onClick={() => navModal(-1)}
-              aria-label="Previous image"
-            >
-              <LucideIcons.ArrowLeft size={32} />
-            </button>
-            <img src={lightbox.url} alt="" className="max-h-[80vh] max-w-[90vw] rounded-xl shadow-lg border-8 border-white" />
-            <button
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-white text-2xl"
-              onClick={() => navModal(1)}
-              aria-label="Next image"
-            >
-              <LucideIcons.ArrowRight size={32} />
-            </button>
+    <>
+      <Navbar />
+      <main className="min-h-screen bg-gray-50 py-12 px-2 md:px-4">
+        <section className="max-w-6xl mx-auto bg-white rounded-3xl shadow-xl p-6 md:p-12">
+          <h1 className="text-2xl md:text-4xl font-bold mb-6 text-center">Gallery</h1>
+          <div className="flex flex-wrap gap-2 justify-center mb-8">
+            {TABS.map(tab => (
+              <button
+                key={tab.key}
+                type="button"
+                aria-pressed={selected === tab.key}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition
+                  ${selected === tab.key
+                    ? "bg-teal-500 text-white shadow"
+                    : "bg-teal-50 text-teal-700 hover:bg-teal-100"}
+                `}
+                onClick={() => setSelected(tab.key)}
+              >
+                {tab.label}
+              </button>
+            ))}
           </div>
-        )}
-      </section>
-    </main>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+            {images.map((img, i) => (
+              <button
+                key={img.url + i}
+                type="button"
+                className="aspect-square rounded-lg overflow-hidden group focus:outline-teal-500"
+                onClick={() => openModal(i)}
+                aria-label={`View ${img.alt} in fullscreen`}
+              >
+                <img
+                  src={img.url}
+                  alt={img.alt}
+                  className="object-cover w-full h-full group-hover:scale-105 transition-transform"
+                  draggable={false}
+                />
+              </button>
+            ))}
+          </div>
+
+          {lightbox && (
+            <div
+              className="fixed inset-0 bg-black/60 flex items-center justify-center z-50"
+              tabIndex={-1}
+              aria-modal="true"
+              role="dialog"
+            >
+              <button className="absolute top-4 right-4 text-white text-2xl" onClick={closeModal} aria-label="Close gallery">
+                <LucideIcons.X size={32} />
+              </button>
+              <button
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-white text-2xl"
+                onClick={() => navModal(-1)}
+                aria-label="Previous image"
+              >
+                <LucideIcons.ArrowLeft size={32} />
+              </button>
+              <img src={lightbox.url} alt="" className="max-h-[80vh] max-w-[90vw] rounded-xl shadow-lg border-8 border-white" />
+              <button
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-white text-2xl"
+                onClick={() => navModal(1)}
+                aria-label="Next image"
+              >
+                <LucideIcons.ArrowRight size={32} />
+              </button>
+            </div>
+          )}
+        </section>
+      </main>
+      <Footer />
+    </>
   );
 }

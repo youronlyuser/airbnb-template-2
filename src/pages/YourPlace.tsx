@@ -1,5 +1,7 @@
 
 import React, { useState } from "react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Bed, Bath, Tv, Utensils, Waves, Sofa } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -74,61 +76,65 @@ export default function YourPlace() {
   const [selected, setSelected] = useState("living");
 
   return (
-    <main className="min-h-screen bg-gray-50 py-12 px-2 md:px-4">
-      <section className="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl p-6 md:p-12 mb-10">
-        <h1 className="text-2xl md:text-4xl font-bold mb-2 text-center mb-4">Tour Seaside Home</h1>
-        <p className="text-gray-600 text-center mb-8">Explore every corner of your home away from home. Scroll through photos, room details, and amenities that make Seaside Home unique!</p>
-        
-        {/* Room-by-room breakdown (tabs) */}
-        <Tabs value={selected} onValueChange={setSelected} className="mb-8">
-          <TabsList className="flex justify-center gap-1 flex-wrap">
+    <>
+      <Navbar />
+      <main className="min-h-screen bg-gray-50 py-12 px-2 md:px-4">
+        <section className="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl p-6 md:p-12 mb-10">
+          <h1 className="text-2xl md:text-4xl font-bold mb-2 text-center mb-4">Tour Seaside Home</h1>
+          <p className="text-gray-600 text-center mb-8">Explore every corner of your home away from home. Scroll through photos, room details, and amenities that make Seaside Home unique!</p>
+          
+          {/* Room-by-room breakdown (tabs) */}
+          <Tabs value={selected} onValueChange={setSelected} className="mb-8">
+            <TabsList className="flex justify-center gap-1 flex-wrap">
+              {ROOM_TABS.map(tab => (
+                <TabsTrigger key={tab.key} value={tab.key} className="rounded-full px-4 py-2 flex items-center gap-2">
+                  <tab.icon size={18} /> {tab.label}
+                </TabsTrigger>
+              ))}
+            </TabsList>
             {ROOM_TABS.map(tab => (
-              <TabsTrigger key={tab.key} value={tab.key} className="rounded-full px-4 py-2 flex items-center gap-2">
-                <tab.icon size={18} /> {tab.label}
-              </TabsTrigger>
+              <TabsContent key={tab.key} value={tab.key} className="mt-8">
+                <div className="flex flex-col md:flex-row items-center gap-6">
+                  <img src={tab.image} alt={tab.label} className="w-full md:w-1/2 object-cover rounded-xl shadow" />
+                  <div className="mt-4 md:mt-0 md:flex-1">
+                    <h2 className="text-xl font-semibold mb-2">{tab.label}</h2>
+                    <p className="text-gray-700">{tab.description}</p>
+                  </div>
+                </div>
+              </TabsContent>
             ))}
-          </TabsList>
-          {ROOM_TABS.map(tab => (
-            <TabsContent key={tab.key} value={tab.key} className="mt-8">
-              <div className="flex flex-col md:flex-row items-center gap-6">
-                <img src={tab.image} alt={tab.label} className="w-full md:w-1/2 object-cover rounded-xl shadow" />
-                <div className="mt-4 md:mt-0 md:flex-1">
-                  <h2 className="text-xl font-semibold mb-2">{tab.label}</h2>
-                  <p className="text-gray-700">{tab.description}</p>
-                </div>
-              </div>
-            </TabsContent>
-          ))}
-        </Tabs>
+          </Tabs>
 
-        {/* Amenities grid */}
-        <h2 className="text-xl font-bold mb-2 mt-8 text-teal-700">Amenities</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {AMENITIES.map(({ icon, label, desc }, i) => {
-            const Icon = LucideIcons[icon.charAt(0).toUpperCase() + icon.slice(1)];
-            return (
-              <div key={i} className="flex items-start gap-3 bg-teal-50 rounded-lg p-4">
-                <span className="bg-white p-2 rounded-full shadow">
-                  {Icon ? <Icon size={20} className="text-teal-600" /> : null}
-                </span>
-                <div>
-                  <div className="font-semibold text-gray-800">{label}</div>
-                  <div className="text-gray-600 text-sm">{desc}</div>
+          {/* Amenities grid */}
+          <h2 className="text-xl font-bold mb-2 mt-8 text-teal-700">Amenities</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {AMENITIES.map(({ icon, label, desc }, i) => {
+              const Icon = LucideIcons[icon.charAt(0).toUpperCase() + icon.slice(1)];
+              return (
+                <div key={i} className="flex items-start gap-3 bg-teal-50 rounded-lg p-4">
+                  <span className="bg-white p-2 rounded-full shadow">
+                    {Icon ? <Icon size={20} className="text-teal-600" /> : null}
+                  </span>
+                  <div>
+                    <div className="font-semibold text-gray-800">{label}</div>
+                    <div className="text-gray-600 text-sm">{desc}</div>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
 
-        {/* Booking instructions */}
-        <div className="mt-12 flex flex-col items-center">
-          <h2 className="text-lg font-bold text-gray-800 mb-3">How to Book</h2>
-          <p className="text-gray-600 text-center mb-3 max-w-2xl">
-            Checking availability or ready to book? Use the <strong>Book Now</strong> button or contact us for special requests or long-term rates.
-          </p>
-          <Button size="lg" className="bg-teal-500 hover:bg-teal-600">Book Now</Button>
-        </div>
-      </section>
-    </main>
+          {/* Booking instructions */}
+          <div className="mt-12 flex flex-col items-center">
+            <h2 className="text-lg font-bold text-gray-800 mb-3">How to Book</h2>
+            <p className="text-gray-600 text-center mb-3 max-w-2xl">
+              Checking availability or ready to book? Use the <strong>Book Now</strong> button or contact us for special requests or long-term rates.
+            </p>
+            <Button size="lg" className="bg-teal-500 hover:bg-teal-600">Book Now</Button>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
   );
 }
