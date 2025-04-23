@@ -1,4 +1,3 @@
-
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -55,8 +54,8 @@ export default function Explore() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-gray-50 py-12 px-2 md:px-4">
-        <section className="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl p-6 md:p-12 mb-10">
+      <main className="min-h-screen bg-gray-50 py-24 px-4">
+        <div className="max-w-5xl mx-auto">
           <h1 className="text-2xl md:text-4xl font-bold mb-6 text-center">Explore Around Seaside Home</h1>
           <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">Discover the best local experiences, attractions, and eats within easy reach of your home base.</p>
           
@@ -100,7 +99,7 @@ export default function Explore() {
               ))}
             </div>
           </div>
-        </section>
+        </div>
       </main>
       <Footer />
     </>

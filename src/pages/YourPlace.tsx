@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -32,7 +31,7 @@ const ROOM_TABS = [
     description:
       "Fully equipped kitchen with chef-quality appliances, spacious island, breakfast bar, and all cookware provided for your culinary adventures.",
     image:
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1506744038136-4627383780b4?auto=format&fit=crop&w=800&q=80",
   },
   {
     key: "bathroom",
@@ -69,7 +68,6 @@ const AMENITIES = [
   { icon: "sofa", label: "Spacious Living", desc: "Large open-plan areas for comfort and relaxation." }
 ];
 
-// Icon component loader from lucide-react
 import * as LucideIcons from "lucide-react";
 
 export default function YourPlace() {
@@ -78,12 +76,11 @@ export default function YourPlace() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-gray-50 py-12 px-2 md:px-4">
-        <section className="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl p-6 md:p-12 mb-10">
-          <h1 className="text-2xl md:text-4xl font-bold mb-2 text-center mb-4">Tour Seaside Home</h1>
+      <main className="min-h-screen bg-gray-50 py-24 px-4">
+        <div className="max-w-5xl mx-auto">
+          <h1 className="text-2xl md:text-4xl font-bold mb-2 text-center">Tour Seaside Home</h1>
           <p className="text-gray-600 text-center mb-8">Explore every corner of your home away from home. Scroll through photos, room details, and amenities that make Seaside Home unique!</p>
           
-          {/* Room-by-room breakdown (tabs) */}
           <Tabs value={selected} onValueChange={setSelected} className="mb-8">
             <TabsList className="flex justify-center gap-1 flex-wrap">
               {ROOM_TABS.map(tab => (
@@ -105,7 +102,6 @@ export default function YourPlace() {
             ))}
           </Tabs>
 
-          {/* Amenities grid */}
           <h2 className="text-xl font-bold mb-2 mt-8 text-teal-700">Amenities</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {AMENITIES.map(({ icon, label, desc }, i) => {
@@ -124,7 +120,6 @@ export default function YourPlace() {
             })}
           </div>
 
-          {/* Booking instructions */}
           <div className="mt-12 flex flex-col items-center">
             <h2 className="text-lg font-bold text-gray-800 mb-3">How to Book</h2>
             <p className="text-gray-600 text-center mb-3 max-w-2xl">
@@ -132,7 +127,7 @@ export default function YourPlace() {
             </p>
             <Button size="lg" className="bg-teal-500 hover:bg-teal-600">Book Now</Button>
           </div>
-        </section>
+        </div>
       </main>
       <Footer />
     </>

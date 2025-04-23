@@ -1,8 +1,7 @@
-
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Star, User } from "lucide-react";
+import { Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const TESTIMONIALS = [
@@ -22,8 +21,8 @@ export default function YourHost() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-gray-50 py-12 px-4">
-        <section className="max-w-3xl mx-auto flex flex-col items-center bg-white rounded-3xl shadow-lg p-8 md:p-12 mt-8">
+      <main className="min-h-screen bg-gray-50 py-24 px-4">
+        <div className="max-w-3xl mx-auto">
           <div className="relative">
             <img
               src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
@@ -71,7 +70,7 @@ export default function YourHost() {
               ))}
             </div>
           </section>
-        </section>
+        </div>
       </main>
       <Footer />
     </>

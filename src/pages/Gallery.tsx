@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -52,8 +51,8 @@ export default function Gallery() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-gray-50 py-12 px-2 md:px-4">
-        <section className="max-w-6xl mx-auto bg-white rounded-3xl shadow-xl p-6 md:p-12">
+      <main className="min-h-screen bg-gray-50 py-24 px-4">
+        <div className="max-w-6xl mx-auto">
           <h1 className="text-2xl md:text-4xl font-bold mb-6 text-center">Gallery</h1>
           <div className="flex flex-wrap gap-2 justify-center mb-8">
             {TABS.map(tab => (
@@ -118,7 +117,7 @@ export default function Gallery() {
               </button>
             </div>
           )}
-        </section>
+        </div>
       </main>
       <Footer />
     </>
