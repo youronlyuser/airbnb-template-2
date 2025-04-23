@@ -91,12 +91,12 @@ export default function YourPlace() {
             </TabsList>
             {ROOM_TABS.map(tab => (
               <TabsContent key={tab.key} value={tab.key} className="mt-8">
-                <div className="flex flex-col md:flex-row items-center gap-6">
-                  <img src={tab.image} alt={tab.label} className="w-full md:w-1/2 object-cover rounded-xl shadow" />
-                  <div className="mt-4 md:mt-0 md:flex-1">
+                <div className="flex flex-col gap-6">
+                  <div>
                     <h2 className="text-xl font-semibold mb-2">{tab.label}</h2>
                     <p className="text-gray-700">{tab.description}</p>
                   </div>
+                  <img src={tab.image} alt={tab.label} className="w-full object-cover rounded-xl shadow" />
                 </div>
               </TabsContent>
             ))}
