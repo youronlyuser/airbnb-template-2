@@ -13,9 +13,11 @@ import RatingComponent from '@/components/RatingComponent';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { translations } from '@/translations';
 
 const Index = () => {
   const { language } = useLanguage();
+  const t = translations[language];
   
   // Animation on scroll functionality
   useEffect(() => {
