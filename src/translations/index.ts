@@ -27,12 +27,31 @@ export const translations = {
       harbor: "Harbor",
       trainStation: "Train Station",
       cityCenter: "City Center",
+      viewOnGoogleMaps: "View on Google Maps",
     },
     yourHost: {
       title: "Meet Sarah, Your Host",
       about: "About Me:",
       profile: "View Airbnb Profile",
       testimonials: "What Past Guests Say",
+      greeting: "Hi! I'm Sarah",
+      bio: "I've been hosting for over 5 years and love sharing this special place with travelers. My goal is to make your stay as comfortable and memorable as possible. I'm always available to provide local tips and help with anything you need during your stay."
+    },
+    amenities: {
+      title: "Our Amenities",
+      subtitle: "Everything you need for a comfortable and luxurious stay at Seaside Home.",
+      wifi: "Free Wi-Fi",
+      pool: "Swimming Pool",
+      kitchen: "Full Kitchen",
+      parking: "Free Parking",
+      fireplace: "Fireplace",
+      petFriendly: "Pet Friendly",
+      smartTv: "Smart TV",
+      hotTub: "Hot Tub",
+      concierge: "Concierge",
+      bikeRental: "Bicycle Rental",
+      secureAccess: "Secure Access",
+      livingRoom: "Spacious Living Room"
     },
     explore: {
       title: "Explore Around Seaside Home",
@@ -79,12 +98,31 @@ export const translations = {
       harbor: "Λιμάνι",
       trainStation: "Σιδηροδρομικός Σταθμός",
       cityCenter: "Κέντρο Πόλης",
+      viewOnGoogleMaps: "Προβολή στο Google Maps",
     },
     yourHost: {
       title: "Γνωρίστε τη Sarah, τον Οικοδεσπότη σας",
       about: "Σχετικά με εμένα:",
       profile: "Προβολή Προφίλ Airbnb",
       testimonials: "Τι λένε οι προηγούμενοι επισκέπτες",
+      greeting: "Γεια! Είμαι η Sarah",
+      bio: "Είμαι οικοδεσπότης για πάνω από 5 χρόνια και μου αρέσει να μοιράζομαι αυτό το ξεχωριστό μέρος με ταξιδιώτες. Ο στόχος μου είναι να κάνω τη διαμονή σας όσο πιο άνετη και αξέχαστη γίνεται. Είμαι πάντα διαθέσιμη να προσφέρω τοπικές συμβουλές και να βοηθήσω σε οτιδήποτε χρειαστείτε κατά τη διαμονή σας."
+    },
+    amenities: {
+      title: "Οι Παροχές μας",
+      subtitle: "Όλα όσα χρειάζεστε για μια άνετη και πολυτελή διαμονή στο Seaside Home.",
+      wifi: "Δωρεάν Wi-Fi",
+      pool: "Πισίνα",
+      kitchen: "Πλήρης Κουζίνα",
+      parking: "Δωρεάν Πάρκινγκ",
+      fireplace: "Τζάκι",
+      petFriendly: "Φιλικό για Κατοικίδια",
+      smartTv: "Έξυπνη Τηλεόραση",
+      hotTub: "Υδρομασάζ",
+      concierge: "Υπηρεσία Θυρωρού",
+      bikeRental: "Ενοικίαση Ποδηλάτων",
+      secureAccess: "Ασφαλής Πρόσβαση",
+      livingRoom: "Ευρύχωρο Σαλόνι"
     },
     explore: {
       title: "Εξερευνήστε γύρω από το Seaside Home",

@@ -1,7 +1,12 @@
 
 import React from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { translations } from '@/translations';
 
 const HostCard = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <section id="host" className="py-16 bg-white">
       <div className="container mx-auto px-4">
@@ -10,7 +15,7 @@ const HostCard = () => {
             <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white shadow-md">
               <img 
                 src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" 
-                alt="Sarah - Your Host"
+                alt={language === 'en' ? "Sarah - Your Host" : "Sarah - Η Οικοδεσπότης σας"}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -18,10 +23,12 @@ const HostCard = () => {
           
           <div className="text-center md:text-left">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">
-              Hi! I'm Sarah
+              {language === 'en' ? "Hi! I'm Sarah" : "Γεια! Είμαι η Sarah"}
             </h2>
             <p className="text-gray-600 mb-6 max-w-lg">
-              I've been hosting for over 5 years and love sharing this special place with travelers. My goal is to make your stay as comfortable and memorable as possible. I'm always available to provide local tips and help with anything you need during your stay.
+              {language === 'en' 
+                ? "I've been hosting for over 5 years and love sharing this special place with travelers. My goal is to make your stay as comfortable and memorable as possible. I'm always available to provide local tips and help with anything you need during your stay."
+                : "Είμαι οικοδεσπότης για πάνω από 5 χρόνια και μου αρέσει να μοιράζομαι αυτό το ξεχωριστό μέρος με ταξιδιώτες. Ο στόχος μου είναι να κάνω τη διαμονή σας όσο πιο άνετη και αξέχαστη γίνεται. Είμαι πάντα διαθέσιμη να προσφέρω τοπικές συμβουλές και να βοηθήσω σε οτιδήποτε χρειαστείτε κατά τη διαμονή σας."}
             </p>
             <div className="flex justify-center md:justify-start">
               <a 
@@ -30,7 +37,7 @@ const HostCard = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-teal-600 hover:text-teal-700 font-medium"
               >
-                <span>View my Airbnb profile</span>
+                <span>{language === 'en' ? "View my Airbnb profile" : "Δείτε το προφίλ μου στο Airbnb"}</span>
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
                   width="18" 

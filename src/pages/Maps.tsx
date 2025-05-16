@@ -1,10 +1,10 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import MapLocation from '@/components/MapLocation';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { translations } from '@/translations';
+import { MapPin, ExternalLink } from 'lucide-react';
 
 // Define map locations with coordinates
 const mapLocations = {
@@ -12,53 +12,97 @@ const mapLocations = {
     {
       title: "Athens International Airport",
       location: [23.9484, 37.9356] as [number, number],
-      description: "The main international airport serving Athens, approximately 30 minutes from our property."
+      description: "The main international airport serving Athens, approximately 30 minutes from our property.",
+      googleMapsUrl: "https://www.google.com/maps?q=37.9356,23.9484"
     },
     {
       title: "Piraeus Harbor",
       location: [23.6450, 37.9377] as [number, number],
-      description: "The largest port in Greece, offering ferry connections to most Greek islands."
+      description: "The largest port in Greece, offering ferry connections to most Greek islands.",
+      googleMapsUrl: "https://www.google.com/maps?q=37.9377,23.6450"
     },
     {
       title: "Athens Train Station",
       location: [23.7273, 37.9908] as [number, number],
-      description: "Central railway station with connections to major cities in Greece and Europe."
+      description: "Central railway station with connections to major cities in Greece and Europe.",
+      googleMapsUrl: "https://www.google.com/maps?q=37.9908,23.7273"
     },
     {
       title: "Seaside Home Location",
       location: [23.7275, 37.9838] as [number, number],
-      description: "Our luxury vacation property with stunning seaside views and premium amenities."
+      description: "Our luxury vacation property with stunning seaside views and premium amenities.",
+      googleMapsUrl: "https://www.google.com/maps?q=37.9838,23.7275"
     }
   ],
   gr: [
     {
       title: "Διεθνές Αεροδρόμιο Αθηνών",
       location: [23.9484, 37.9356] as [number, number],
-      description: "Το κύριο διεθνές αεροδρόμιο που εξυπηρετεί την Αθήνα, περίπου 30 λεπτά από την ιδιοκτησία μας."
+      description: "Το κύριο διεθνές αεροδρόμιο που εξυπηρετεί την Αθήνα, περίπου 30 λεπτά από την ιδιοκτησία μας.",
+      googleMapsUrl: "https://www.google.com/maps?q=37.9356,23.9484"
     },
     {
       title: "Λιμάνι Πειραιά",
       location: [23.6450, 37.9377] as [number, number],
-      description: "Το μεγαλύτερο λιμάνι της Ελλάδας, που προσφέρει συνδέσεις με πλοία προς τα περισσότερα ελληνικά νησιά."
+      description: "Το μεγαλύτερο λιμάνι της Ελλάδας, που προσφέρει συνδέσεις με πλοία προς τα περισσότερα ελληνικά νησιά.",
+      googleMapsUrl: "https://www.google.com/maps?q=37.9377,23.6450"
     },
     {
       title: "Σιδηροδρομικός Σταθμός Αθηνών",
       location: [23.7273, 37.9908] as [number, number],
-      description: "Κεντρικός σιδηροδρομικός σταθμός με συνδέσεις προς τις μεγάλες πόλεις της Ελλάδας και της Ευρώπης."
+      description: "Κεντρικός σιδηροδρομικός σταθμός με συνδέσεις προς τις μεγάλες πόλεις της Ελλάδας και της Ευρώπης.",
+      googleMapsUrl: "https://www.google.com/maps?q=37.9908,23.7273"
     },
     {
       title: "Τοποθεσία Seaside Home",
       location: [23.7275, 37.9838] as [number, number],
-      description: "Η πολυτελής κατοικία διακοπών μας με εντυπωσιακή θέα στη θάλασσα και κορυφαίες ανέσεις."
+      description: "Η πολυτελής κατοικία διακοπών μας με εντυπωσιακή θέα στη θάλασσα και κορυφαίες ανέσεις.",
+      googleMapsUrl: "https://www.google.com/maps?q=37.9838,23.7275"
     }
   ]
+};
+
+const GoogleMapLocation = ({ title, description, googleMapsUrl, location }: {
+  title: string;
+  description: string;
+  googleMapsUrl: string;
+  location: [number, number];
+}) => {
+  const { language } = useLanguage();
+  const t = translations[language];
+  
+  return (
+    <div className="flex flex-col h-full bg-white rounded-lg shadow-md p-6">
+      <h3 className="text-lg font-semibold mb-2 text-brand-primary flex items-center">
+        <MapPin className="mr-2 text-teal-600" size={18} />
+        {title}
+      </h3>
+      
+      <p className="text-gray-600 mb-4 text-sm">{description}</p>
+      
+      <div className="mt-auto">
+        <div className="bg-gray-100 rounded-md p-2 mb-3 text-xs text-gray-600 font-mono">
+          {location[1].toFixed(4)}, {location[0].toFixed(4)}
+        </div>
+        
+        <a 
+          href={googleMapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center w-full gap-2 bg-teal-600 text-white py-2 px-4 rounded-md hover:bg-teal-700 transition-colors"
+        >
+          <ExternalLink size={16} />
+          <span>{t.maps.viewOnGoogleMaps}</span>
+        </a>
+      </div>
+    </div>
+  );
 };
 
 const Maps = () => {
   const { language } = useLanguage();
   const t = translations[language];
   const locations = mapLocations[language];
-  const [mapboxToken, setMapboxToken] = useState('');
 
   // Update document title
   useEffect(() => {
@@ -79,24 +123,14 @@ const Maps = () => {
           </p>
         </div>
         
-        {/* Map Token Input (for demo purposes) */}
-        <div className="mb-8 max-w-md mx-auto">
-          <div className="bg-yellow-50 border border-yellow-100 rounded-lg p-4 text-sm text-yellow-800">
-            <p className="mb-2">
-              {language === 'en' 
-                ? 'For demonstration purposes, the maps are using a placeholder. In a production environment, you would use a valid Mapbox token.'
-                : 'Για λόγους επίδειξης, οι χάρτες χρησιμοποιούν ένα προσωρινό token. Σε περιβάλλον παραγωγής, θα χρησιμοποιούσατε ένα έγκυρο token Mapbox.'}
-            </p>
-          </div>
-        </div>
-        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {locations.map((location, index) => (
-            <MapLocation 
+            <GoogleMapLocation 
               key={index}
               title={location.title}
               location={location.location}
               description={location.description}
+              googleMapsUrl={location.googleMapsUrl}
             />
           ))}
         </div>
