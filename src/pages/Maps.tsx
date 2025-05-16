@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { translations } from '@/translations';
-import { MapPin, ExternalLink } from 'lucide-react';
+import MapLocation from '@/components/MapLocation';
 
 // Define map locations with coordinates
 const mapLocations = {
@@ -62,43 +62,6 @@ const mapLocations = {
   ]
 };
 
-const GoogleMapLocation = ({ title, description, googleMapsUrl, location }: {
-  title: string;
-  description: string;
-  googleMapsUrl: string;
-  location: [number, number];
-}) => {
-  const { language } = useLanguage();
-  const t = translations[language];
-  
-  return (
-    <div className="flex flex-col h-full bg-white rounded-lg shadow-md p-6">
-      <h3 className="text-lg font-semibold mb-2 text-brand-primary flex items-center">
-        <MapPin className="mr-2 text-teal-600" size={18} />
-        {title}
-      </h3>
-      
-      <p className="text-gray-600 mb-4 text-sm">{description}</p>
-      
-      <div className="mt-auto">
-        <div className="bg-gray-100 rounded-md p-2 mb-3 text-xs text-gray-600 font-mono">
-          {location[1].toFixed(4)}, {location[0].toFixed(4)}
-        </div>
-        
-        <a 
-          href={googleMapsUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center w-full gap-2 bg-teal-600 text-white py-2 px-4 rounded-md hover:bg-teal-700 transition-colors"
-        >
-          <ExternalLink size={16} />
-          <span>{t.maps.viewOnGoogleMaps}</span>
-        </a>
-      </div>
-    </div>
-  );
-};
-
 const Maps = () => {
   const { language } = useLanguage();
   const t = translations[language];
@@ -125,7 +88,7 @@ const Maps = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {locations.map((location, index) => (
-            <GoogleMapLocation 
+            <MapLocation 
               key={index}
               title={location.title}
               location={location.location}
