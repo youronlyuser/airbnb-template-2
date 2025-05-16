@@ -3,22 +3,26 @@ import React, { useState } from 'react';
 import { Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useToast } from '@/hooks/use-toast';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { translations } from '@/translations';
 
 const RatingComponent = () => {
   const [rating, setRating] = useState<number | null>(null);
   const [hover, setHover] = useState<number | null>(null);
   const { toast } = useToast();
+  const { language } = useLanguage();
+  const t = translations[language];
   
   const handleRatingSubmit = () => {
     if (rating) {
       toast({
-        title: "Thank you for your rating!",
-        description: `You rated us ${rating} out of 5 stars.`,
+        title: t.rating.thankYou,
+        description: t.rating.ratedText.replace('{rating}', String(rating)),
       });
     } else {
       toast({
-        title: "Please select a rating",
-        description: "Click on a star to rate your experience.",
+        title: t.rating.selectRating,
+        description: t.rating.clickStar,
         variant: "destructive",
       });
     }
@@ -29,10 +33,14 @@ const RatingComponent = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Rate Your <span className="text-teal-600">Experience</span>
+            {language === 'en' ? (
+              <>Rate Your <span className="text-teal-600">Experience</span></>
+            ) : (
+              <><span className="text-teal-600">{t.rating.title}</span></>
+            )}
           </h2>
           <p className="text-gray-600 mb-8">
-            We value your feedback! Let us know how we did by rating your stay at Seaside Home.
+            {t.rating.subtitle}
           </p>
           
           <div className="flex justify-center space-x-3 mb-6">
@@ -65,7 +73,7 @@ const RatingComponent = () => {
             onClick={handleRatingSubmit}
             className="bg-teal-500 hover:bg-teal-600 text-white font-medium px-6 py-2 rounded-md transition"
           >
-            Submit Your Rating
+            {t.rating.submitButton}
           </button>
         </div>
       </div>

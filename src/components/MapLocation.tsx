@@ -18,6 +18,8 @@ const MapLocation = ({ title, location, description, googleMapsUrl }: MapLocatio
   
   // Generate Google Maps URL if not provided
   const mapUrl = googleMapsUrl || `https://www.google.com/maps?q=${latitude},${longitude}`;
+  // Generate Google Maps Embed URL
+  const embedUrl = `https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${latitude},${longitude}&zoom=12`;
 
   return (
     <div className="flex flex-col h-full bg-white rounded-lg shadow-md p-6">
@@ -28,11 +30,20 @@ const MapLocation = ({ title, location, description, googleMapsUrl }: MapLocatio
       
       {description && <p className="text-gray-600 mb-4 text-sm">{description}</p>}
       
+      {/* Google Maps Embed */}
+      <div className="w-full h-48 rounded-md overflow-hidden mb-4">
+        <iframe
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          loading="lazy"
+          allowFullScreen
+          src={embedUrl}
+          title={title}
+        ></iframe>
+      </div>
+      
       <div className="mt-auto">
-        <div className="bg-gray-100 rounded-md p-2 mb-3 text-xs text-gray-600 font-mono">
-          {latitude.toFixed(4)}, {longitude.toFixed(4)}
-        </div>
-        
         <a 
           href={mapUrl}
           target="_blank"
@@ -40,7 +51,7 @@ const MapLocation = ({ title, location, description, googleMapsUrl }: MapLocatio
           className="flex items-center justify-center w-full gap-2 bg-teal-600 text-white py-2 px-4 rounded-md hover:bg-teal-700 transition-colors"
         >
           <ExternalLink size={16} />
-          <span>{language === 'en' ? "View on Google Maps" : "Προβολή στο Google Maps"}</span>
+          <span>{t.maps.viewOnGoogleMaps}</span>
         </a>
       </div>
     </div>

@@ -1,5 +1,7 @@
 
 import React from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { translations } from '@/translations';
 import {
   Accordion,
   AccordionContent,
@@ -8,6 +10,9 @@ import {
 } from "@/components/ui/accordion";
 
 const FAQSection = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+  
   const faqs = [
     {
       question: "What are the check-in and check-out times?",
@@ -43,7 +48,11 @@ const FAQSection = () => {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          Frequently Asked <span className="text-teal-600">Questions</span>
+          {language === 'en' ? (
+            <>Frequently Asked <span className="text-teal-600">Questions</span></>
+          ) : (
+            <><span className="text-teal-600">{t.faq.title}</span></>
+          )}
         </h2>
         
         <div className="max-w-3xl mx-auto">

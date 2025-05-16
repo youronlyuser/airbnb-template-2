@@ -1,6 +1,8 @@
 
 import React from 'react';
 import { MapPin, Compass, Car, Utensils, FileText } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { translations } from '@/translations';
 
 const GuideCard = ({ 
   icon: Icon, 
@@ -25,14 +27,21 @@ const GuideCard = ({
 );
 
 const LocalGuide = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <section id="explore" className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-          Explore the <span className="text-teal-600">Area</span>
+          {language === 'en' ? (
+            <>Explore the <span className="text-teal-600">Area</span></>
+          ) : (
+            <><span className="text-teal-600">{t.explore.title}</span></>
+          )}
         </h2>
         <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12">
-          Discover all that the surrounding area has to offer during your stay.
+          {t.explore.subtitle}
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">

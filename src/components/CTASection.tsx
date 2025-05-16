@@ -1,16 +1,21 @@
 
 import React from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { translations } from '@/translations';
 
 const CTASection = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <section id="contact" className="py-20 bg-teal-600 text-white">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Book Your Stay Today!
+            {t.cta.title}
           </h2>
           <p className="text-xl mb-8 opacity-90">
-            Experience the perfect beachside getaway at Seaside Home. Limited dates available.
+            {t.cta.subtitle}
           </p>
           
           <a
@@ -19,7 +24,7 @@ const CTASection = () => {
             rel="noopener noreferrer"
             className="inline-block bg-white text-teal-600 font-bold px-8 py-4 rounded-md text-lg shadow-lg hover:bg-gray-100 transition transform hover:scale-105"
           >
-            Book Now
+            {t.cta.button}
           </a>
           
           <div className="mt-10 pt-10 border-t border-teal-500 flex justify-center space-x-6">

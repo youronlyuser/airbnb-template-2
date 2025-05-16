@@ -1,13 +1,22 @@
 
 import React from 'react';
 import { Star } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { translations } from '@/translations';
 
 const ReviewCard = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          What Our <span className="text-teal-600">Guests Say</span>
+          {language === 'en' ? (
+            <>What Our <span className="text-teal-600">Guests Say</span></>
+          ) : (
+            <><span className="text-teal-600">{t.reviews.title}</span></>
+          )}
         </h2>
         
         <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-sm p-8 md:p-10 relative">
@@ -27,7 +36,7 @@ const ReviewCard = () => {
           
           <div className="text-center">
             <p className="text-lg md:text-xl text-gray-700 italic mb-6 relative z-10">
-              "We had the most incredible stay at Seaside Home! The views are breathtaking, the house is impeccably clean, and Sarah was an amazing host. All the special touches made us feel right at home. We've already booked our next stay!"
+              "{t.reviews.reviewText}"
             </p>
             
             <div className="flex items-center justify-center mb-4">
@@ -40,13 +49,13 @@ const ReviewCard = () => {
               <div className="w-12 h-12 rounded-full overflow-hidden mr-3">
                 <img
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
-                  alt="Michael & Emily"
+                  alt={t.reviews.reviewAuthor}
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="text-left">
-                <h4 className="font-semibold text-gray-800">Michael & Emily</h4>
-                <p className="text-gray-500 text-sm">July 2023</p>
+                <h4 className="font-semibold text-gray-800">{t.reviews.reviewAuthor}</h4>
+                <p className="text-gray-500 text-sm">{t.reviews.reviewDate}</p>
               </div>
             </div>
           </div>
