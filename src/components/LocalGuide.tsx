@@ -45,50 +45,44 @@ const LocalGuide = () => {
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          <GuideCard icon={MapPin} title="About Your Rental">
+          <GuideCard icon={MapPin} title={t.explore.cards.location.title}>
             <p className="text-gray-600">
-              Nestled just 5 minutes from the beach, our property offers the perfect blend of privacy and convenience. The nearby town center is a short 10-minute walk away.
+              {t.explore.cards.location.description}
             </p>
           </GuideCard>
           
-          <GuideCard icon={Compass} title="What to See and Do">
+          <GuideCard icon={Compass} title={t.explore.cards.activities.title}>
             <ul className="text-gray-600 space-y-2 list-disc pl-5">
-              <li>Sandy beaches (5 min drive)</li>
-              <li>Coastal hiking trails (15 min)</li>
-              <li>Historic city center (10 min walk)</li>
-              <li>Local farmers market (Saturdays)</li>
-              <li>Water sports rentals (10 min)</li>
+              {t.explore.cards.activities.items.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
             </ul>
           </GuideCard>
           
-          <GuideCard icon={Car} title="Car & Boat Rentals">
+          <GuideCard icon={Car} title={t.explore.cards.rentals.title}>
             <p className="text-gray-600">
-              We've partnered with local rental companies to provide special discounts for our guests. Use promo code "SEASIDE" when booking with Coastal Rentals or Bay Boats.
+              {t.explore.cards.rentals.description}
             </p>
           </GuideCard>
           
-          <GuideCard icon={Utensils} title="Local Restaurants">
+          <GuideCard icon={Utensils} title={t.explore.cards.restaurants.title}>
             <p className="text-gray-600">
-              Don't miss The Coastal Kitchen for fresh seafood, Harbor Cafe for breakfast, and Sunset Grill for outdoor dining with ocean views. We've included a detailed restaurant guide in your welcome package.
+              {t.explore.cards.restaurants.description}
             </p>
           </GuideCard>
         </div>
         
         {/* Helpful PDFs */}
         <div className="mt-12 max-w-2xl mx-auto">
-          <h3 className="text-xl font-semibold text-center mb-6">Helpful Guides</h3>
+          <h3 className="text-xl font-semibold text-center mb-6">{t.explore.guides.title}</h3>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            {[
-              { icon: FileText, title: "Area Map", url: "#" },
-              { icon: FileText, title: "Local Guide", url: "#" },
-              { icon: FileText, title: "House Manual", url: "#" }
-            ].map((item, index) => (
+            {t.explore.guides.items.map((item, index) => (
               <a 
                 key={index}
                 href={item.url} 
                 className="flex items-center justify-center gap-2 bg-white px-5 py-3 rounded-lg border border-gray-200 text-teal-600 hover:bg-teal-50 transition"
               >
-                <item.icon size={20} />
+                <FileText size={20} />
                 <span>{item.title}</span>
               </a>
             ))}

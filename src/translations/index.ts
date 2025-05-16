@@ -56,6 +56,38 @@ export const translations = {
     explore: {
       title: "Explore the Area",
       subtitle: "Discover all that the surrounding area has to offer during your stay.",
+      cards: {
+        location: {
+          title: "About Your Rental",
+          description: "Nestled just 5 minutes from the beach, our property offers the perfect blend of privacy and convenience. The nearby town center is a short 10-minute walk away."
+        },
+        activities: {
+          title: "What to See and Do",
+          items: [
+            "Sandy beaches (5 min drive)",
+            "Coastal hiking trails (15 min)",
+            "Historic city center (10 min walk)",
+            "Local farmers market (Saturdays)",
+            "Water sports rentals (10 min)"
+          ]
+        },
+        rentals: {
+          title: "Car & Boat Rentals",
+          description: "We've partnered with local rental companies to provide special discounts for our guests. Use promo code \"SEASIDE\" when booking with Coastal Rentals or Bay Boats."
+        },
+        restaurants: {
+          title: "Local Restaurants",
+          description: "Don't miss The Coastal Kitchen for fresh seafood, Harbor Cafe for breakfast, and Sunset Grill for outdoor dining with ocean views. We've included a detailed restaurant guide in your welcome package."
+        }
+      },
+      guides: {
+        title: "Helpful Guides",
+        items: [
+          { title: "Area Map", url: "#" },
+          { title: "Local Guide", url: "#" },
+          { title: "House Manual", url: "#" }
+        ]
+      }
     },
     stayDetails: {
       title: "Your Stay Details",
@@ -86,7 +118,37 @@ export const translations = {
       }
     },
     faq: {
-      title: "Frequently Asked Questions"
+      title: "Frequently Asked Questions",
+      questions: [
+        {
+          question: "What are the check-in and check-out times?",
+          answer: "Check-in is from 3:00 PM to 8:00 PM, and check-out is by 11:00 AM. Early check-in or late check-out may be available upon request, subject to availability."
+        },
+        {
+          question: "Is the property pet-friendly?",
+          answer: "Yes, we welcome well-behaved pets! There is a $50 pet fee per stay. Please let us know in advance if you'll be bringing a pet, and note that pets must not be left unattended in the property."
+        },
+        {
+          question: "Is there parking available?",
+          answer: "Yes, there is free parking for up to two vehicles in the driveway. Additional street parking is also available nearby."
+        },
+        {
+          question: "How do I access the Wi-Fi?",
+          answer: "Wi-Fi details are provided in the welcome booklet upon arrival. Our high-speed fiber connection ensures you stay connected throughout your stay."
+        },
+        {
+          question: "What amenities are included?",
+          answer: "The property includes a fully equipped kitchen, air conditioning, heating, washer/dryer, linens, towels, beach towels, beach chairs, toiletries, hairdryer, iron, and board games."
+        },
+        {
+          question: "How do I collect the keys?",
+          answer: "We use a secure digital lock system. You'll receive a unique access code 24 hours before check-in via email and text message. No physical key exchange is required."
+        },
+        {
+          question: "Are there any good restaurants nearby?",
+          answer: "Yes! There are several excellent restaurants within walking distance. Our favorites include The Coastal Kitchen (seafood), Harbor Cafe (breakfast), and Sunset Grill (amazing views). A detailed restaurant guide is included in your welcome package."
+        }
+      ]
     },
     rating: {
       title: "Rate Your Experience",
@@ -170,6 +232,38 @@ export const translations = {
     explore: {
       title: "Εξερευνήστε την Περιοχή",
       subtitle: "Ανακαλύψτε όλα όσα έχει να προσφέρει η γύρω περιοχή κατά τη διαμονή σας.",
+      cards: {
+        location: {
+          title: "Σχετικά με το Κατάλυμά σας",
+          description: "Βρίσκεται μόλις 5 λεπτά από την παραλία, το κατάλυμά μας προσφέρει τον τέλειο συνδυασμό ιδιωτικότητας και ευκολίας. Το κοντινό κέντρο της πόλης απέχει μόλις 10 λεπτά με τα πόδια."
+        },
+        activities: {
+          title: "Τι να Δείτε και να Κάνετε",
+          items: [
+            "Αμμώδεις παραλίες (5 λεπτά με αυτοκίνητο)",
+            "Παραθαλάσσια μονοπάτια πεζοπορίας (15 λεπτά)",
+            "Ιστορικό κέντρο της πόλης (10 λεπτά με τα πόδια)",
+            "Τοπική αγορά αγροτών (Σάββατα)",
+            "Ενοικιάσεις θαλάσσιων σπορ (10 λεπτά)"
+          ]
+        },
+        rentals: {
+          title: "Ενοικιάσεις Αυτοκινήτων & Σκαφών",
+          description: "Έχουμε συνεργαστεί με τοπικές εταιρείες ενοικίασης για να προσφέρουμε ειδικές εκπτώσεις στους επισκέπτες μας. Χρησιμοποιήστε τον κωδικό προσφοράς \"SEASIDE\" όταν κάνετε κράτηση με την Coastal Rentals ή την Bay Boats."
+        },
+        restaurants: {
+          title: "Τοπικά Εστιατόρια",
+          description: "Μην χάσετε το The Coastal Kitchen για φρέσκα θαλασσινά, το Harbor Cafe για πρωινό, και το Sunset Grill για υπαίθριο φαγητό με θέα στον ωκεανό. Έχουμε συμπεριλάβει έναν λεπτομερή οδηγό εστιατορίων στο πακέτο καλωσορίσματός σας."
+        }
+      },
+      guides: {
+        title: "Χρήσιμοι Οδηγοί",
+        items: [
+          { title: "Χάρτης Περιοχής", url: "#" },
+          { title: "Τοπικός Οδηγός", url: "#" },
+          { title: "Εγχειρίδιο Σπιτιού", url: "#" }
+        ]
+      }
     },
     stayDetails: {
       title: "Λεπτομέρειες Διαμονής",
@@ -200,7 +294,37 @@ export const translations = {
       }
     },
     faq: {
-      title: "Συχνές Ερωτήσεις"
+      title: "Συχνές Ερωτήσεις",
+      questions: [
+        {
+          question: "Ποιες είναι οι ώρες check-in και check-out;",
+          answer: "Το check-in είναι από τις 15:00 έως τις 20:00, και το check-out είναι έως τις 11:00. Πρόωρο check-in ή αργό check-out μπορεί να είναι διαθέσιμα κατόπιν αιτήματος, ανάλογα με τη διαθεσιμότητα."
+        },
+        {
+          question: "Είναι το κατάλυμα φιλικό προς τα κατοικίδια;",
+          answer: "Ναι, καλωσορίζουμε τα καλοσυμπεριφερόμενα κατοικίδια! Υπάρχει τέλος κατοικιδίου 50$ ανά διαμονή. Παρακαλούμε ενημερώστε μας εκ των προτέρων αν θα φέρετε κατοικίδιο, και σημειώστε ότι τα κατοικίδια δεν πρέπει να αφήνονται χωρίς επιτήρηση στο κατάλυμα."
+        },
+        {
+          question: "Υπάρχει διαθέσιμο πάρκινγκ;",
+          answer: "Ναι, υπάρχει δωρεάν πάρκινγκ για έως και δύο οχήματα στο ιδιωτικό δρομάκι. Επιπλέον χώρος στάθμευσης στο δρόμο είναι επίσης διαθέσιμος κοντά."
+        },
+        {
+          question: "Πώς έχω πρόσβαση στο Wi-Fi;",
+          answer: "Οι λεπτομέρειες για το Wi-Fi παρέχονται στο βιβλίο καλωσορίσματος κατά την άφιξη. Η σύνδεση οπτικών ινών υψηλής ταχύτητάς μας διασφαλίζει ότι θα παραμείνετε συνδεδεμένοι καθ' όλη τη διάρκεια της διαμονής σας."
+        },
+        {
+          question: "Ποιες παροχές περιλαμβάνονται;",
+          answer: "Το κατάλυμα περιλαμβάνει πλήρως εξοπλισμένη κουζίνα, κλιματισμό, θέρμανση, πλυντήριο/στεγνωτήριο, λευκά είδη, πετσέτες, πετσέτες παραλίας, καρέκλες παραλίας, είδη τουαλέτας, σεσουάρ, σίδερο, και επιτραπέζια παιχνίδια."
+        },
+        {
+          question: "Πώς παραλαμβάνω τα κλειδιά;",
+          answer: "Χρησιμοποιούμε ένα ασφαλές σύστημα ψηφιακής κλειδαριάς. Θα λάβετε έναν μοναδικό κωδικό πρόσβασης 24 ώρες πριν το check-in μέσω email και μηνύματος κειμένου. Δεν απαιτείται φυσική ανταλλαγή κλειδιών."
+        },
+        {
+          question: "Υπάρχουν καλά εστιατόρια κοντά;",
+          answer: "Ναι! Υπάρχουν αρκετά εξαιρετικά εστιατόρια σε κοντινή απόσταση με τα πόδια. Τα αγαπημένα μας περιλαμβάνουν το The Coastal Kitchen (θαλασσινά), το Harbor Cafe (πρωινό), και το Sunset Grill (καταπληκτική θέα). Ένας λεπτομερής οδηγός εστιατορίων περιλαμβάνεται στο πακέτο καλωσορίσματός σας."
+        }
+      ]
     },
     rating: {
       title: "Αξιολογήστε την Εμπειρία Σας",
