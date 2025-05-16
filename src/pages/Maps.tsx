@@ -11,44 +11,44 @@ const mapLocations = {
   en: [
     {
       title: "Athens International Airport",
-      location: [23.9484, 37.9356],
+      location: [23.9484, 37.9356] as [number, number],
       description: "The main international airport serving Athens, approximately 30 minutes from our property."
     },
     {
       title: "Piraeus Harbor",
-      location: [23.6450, 37.9377],
+      location: [23.6450, 37.9377] as [number, number],
       description: "The largest port in Greece, offering ferry connections to most Greek islands."
     },
     {
       title: "Athens Train Station",
-      location: [23.7273, 37.9908],
+      location: [23.7273, 37.9908] as [number, number],
       description: "Central railway station with connections to major cities in Greece and Europe."
     },
     {
       title: "Seaside Home Location",
-      location: [23.7275, 37.9838],
+      location: [23.7275, 37.9838] as [number, number],
       description: "Our luxury vacation property with stunning seaside views and premium amenities."
     }
   ],
   gr: [
     {
       title: "Διεθνές Αεροδρόμιο Αθηνών",
-      location: [23.9484, 37.9356],
+      location: [23.9484, 37.9356] as [number, number],
       description: "Το κύριο διεθνές αεροδρόμιο που εξυπηρετεί την Αθήνα, περίπου 30 λεπτά από την ιδιοκτησία μας."
     },
     {
       title: "Λιμάνι Πειραιά",
-      location: [23.6450, 37.9377],
+      location: [23.6450, 37.9377] as [number, number],
       description: "Το μεγαλύτερο λιμάνι της Ελλάδας, που προσφέρει συνδέσεις με πλοία προς τα περισσότερα ελληνικά νησιά."
     },
     {
       title: "Σιδηροδρομικός Σταθμός Αθηνών",
-      location: [23.7273, 37.9908],
+      location: [23.7273, 37.9908] as [number, number],
       description: "Κεντρικός σιδηροδρομικός σταθμός με συνδέσεις προς τις μεγάλες πόλεις της Ελλάδας και της Ευρώπης."
     },
     {
       title: "Τοποθεσία Seaside Home",
-      location: [23.7275, 37.9838],
+      location: [23.7275, 37.9838] as [number, number],
       description: "Η πολυτελής κατοικία διακοπών μας με εντυπωσιακή θέα στη θάλασσα και κορυφαίες ανέσεις."
     }
   ]
