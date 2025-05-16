@@ -12,8 +12,11 @@ import FAQSection from '@/components/FAQSection';
 import RatingComponent from '@/components/RatingComponent';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Index = () => {
+  const { language } = useLanguage();
+  
   // Animation on scroll functionality
   useEffect(() => {
     const animateOnScroll = () => {
@@ -43,8 +46,8 @@ const Index = () => {
   
   // Update document title
   useEffect(() => {
-    document.title = "Seaside Home | Luxury Vacation Rental";
-  }, []);
+    document.title = language === "en" ? "Seaside Home | Luxury Vacation Rental" : "Seaside Home | Πολυτελής Διαμονή Διακοπών";
+  }, [language]);
 
   return (
     <div className="min-h-screen bg-gray-50">

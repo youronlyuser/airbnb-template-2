@@ -1,38 +1,68 @@
+
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import * as LucideIcons from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/translations";
 
-const TABS = [
-  { key: "all", label: "All" },
-  { key: "living", label: "Living Room" },
-  { key: "kitchen", label: "Kitchen" },
-  { key: "bedroom", label: "Bedroom" },
-  { key: "outdoor", label: "Outdoor" },
-];
-
-const IMAGES = [
-  // Room, url, alt
-  { room: "living", url: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?auto=format&fit=crop&w=800&q=80", alt: "Living Room" },
-  { room: "kitchen", url: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80", alt: "Kitchen" },
-  { room: "bedroom", url: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80", alt: "Bedroom" },
-  { room: "outdoor", url: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=800&q=80", alt: "Outdoor Space" },
-  { room: "living", url: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?auto=format&fit=crop&w=800&q=80", alt: "Living Room Angle" },
-  { room: "bedroom", url: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80", alt: "Bedroom (2)" },
-];
-
-function filterImages(room: string) {
+function filterImages(room: string, IMAGES: any[]) {
   if (room === "all") return IMAGES;
   return IMAGES.filter(img => img.room === room);
 }
 
 export default function Gallery() {
+  const { language } = useLanguage();
+  const t = translations[language];
+  
+  const TABS = [
+    { key: "all", label: language === 'en' ? "All" : "Όλα" },
+    { key: "living", label: language === 'en' ? "Living Room" : "Σαλόνι" },
+    { key: "kitchen", label: language === 'en' ? "Kitchen" : "Κουζίνα" },
+    { key: "bedroom", label: language === 'en' ? "Bedroom" : "Υπνοδωμάτιο" },
+    { key: "outdoor", label: language === 'en' ? "Outdoor" : "Εξωτερικός χώρος" },
+  ];
+
+  const IMAGES = [
+    // Room, url, alt
+    { 
+      room: "living", 
+      url: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?auto=format&fit=crop&w=800&q=80", 
+      alt: language === 'en' ? "Living Room" : "Σαλόνι" 
+    },
+    { 
+      room: "kitchen", 
+      url: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80", 
+      alt: language === 'en' ? "Kitchen" : "Κουζίνα" 
+    },
+    { 
+      room: "bedroom", 
+      url: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80", 
+      alt: language === 'en' ? "Bedroom" : "Υπνοδωμάτιο" 
+    },
+    { 
+      room: "outdoor", 
+      url: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=800&q=80", 
+      alt: language === 'en' ? "Outdoor Space" : "Εξωτερικός χώρος" 
+    },
+    { 
+      room: "living", 
+      url: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?auto=format&fit=crop&w=800&q=80", 
+      alt: language === 'en' ? "Living Room Angle" : "Σαλόνι - Διαφορετική γωνία" 
+    },
+    { 
+      room: "bedroom", 
+      url: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80", 
+      alt: language === 'en' ? "Bedroom (2)" : "Υπνοδωμάτιο (2)" 
+    },
+  ];
+
   const [selected, setSelected] = useState("all");
   const [lightbox, setLightbox] = useState<null | { url: string; i: number }>(
     null
   );
 
-  const images = filterImages(selected);
+  const images = filterImages(selected, IMAGES);
 
   function openModal(i: number) {
     setLightbox({ url: images[i].url, i });
@@ -53,7 +83,9 @@ export default function Gallery() {
       <Navbar />
       <main className="min-h-screen bg-gray-50 py-24 px-4">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-2xl md:text-4xl font-bold mb-6 text-center">Gallery</h1>
+          <h1 className="text-2xl md:text-4xl font-bold mb-6 text-center">
+            {language === 'en' ? "Gallery" : "Γκαλερί"}
+          </h1>
           <div className="flex flex-wrap gap-2 justify-center mb-8">
             {TABS.map(tab => (
               <button
@@ -97,13 +129,13 @@ export default function Gallery() {
               aria-modal="true"
               role="dialog"
             >
-              <button className="absolute top-4 right-4 text-white text-2xl" onClick={closeModal} aria-label="Close gallery">
+              <button className="absolute top-4 right-4 text-white text-2xl" onClick={closeModal} aria-label={language === 'en' ? "Close gallery" : "Κλείσιμο γκαλερί"}>
                 <LucideIcons.X size={32} />
               </button>
               <button
                 className="absolute left-4 top-1/2 -translate-y-1/2 text-white text-2xl"
                 onClick={() => navModal(-1)}
-                aria-label="Previous image"
+                aria-label={language === 'en' ? "Previous image" : "Προηγούμενη εικόνα"}
               >
                 <LucideIcons.ArrowLeft size={32} />
               </button>
@@ -111,7 +143,7 @@ export default function Gallery() {
               <button
                 className="absolute right-4 top-1/2 -translate-y-1/2 text-white text-2xl"
                 onClick={() => navModal(1)}
-                aria-label="Next image"
+                aria-label={language === 'en' ? "Next image" : "Επόμενη εικόνα"}
               >
                 <LucideIcons.ArrowRight size={32} />
               </button>

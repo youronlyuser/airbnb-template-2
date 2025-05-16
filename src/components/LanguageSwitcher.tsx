@@ -12,14 +12,16 @@ export default function LanguageSwitcher() {
 
   return (
     <Button
-      variant="ghost"
+      variant="outline"
       size="sm"
       onClick={toggleLanguage}
-      className="flex items-center gap-2 text-gray-700 hover:text-brand-primary"
+      className="flex items-center gap-2 border-gray-300 bg-white/80 hover:bg-gray-100 text-gray-700 hover:text-brand-primary"
       aria-label={language === 'en' ? 'Switch to Greek' : 'Switch to English'}
     >
-      <Globe size={20} />
-      <span className="font-medium">{language === 'en' ? 'EN' : 'GR'}</span>
+      <Globe size={18} />
+      <span className="font-medium">
+        {language === 'en' ? 'English' : 'Ελληνικά'}
+      </span>
     </Button>
   );
 }

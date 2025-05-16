@@ -15,12 +15,12 @@ const Navbar = () => {
   const t = translations[language];
 
   const NAV_LINKS = [
-    { to: "/", label: "nav.home" },
-    { to: "/your-host", label: "nav.yourHost" },
-    { to: "/your-place", label: "nav.yourPlace" },
-    { to: "/explore", label: "nav.explore" },
-    { to: "/gallery", label: "nav.gallery" },
-    { to: "/maps", label: "nav.maps" },
+    { to: "/", label: t.nav.home },
+    { to: "/your-host", label: t.nav.yourHost },
+    { to: "/your-place", label: t.nav.yourPlace },
+    { to: "/explore", label: t.nav.explore },
+    { to: "/gallery", label: t.nav.gallery },
+    { to: "/maps", label: t.nav.maps },
   ];
 
   useEffect(() => {
@@ -63,7 +63,7 @@ const Navbar = () => {
               )}
               aria-current={location.pathname === link.to ? "page" : undefined}
             >
-              {t[link.label]}
+              {link.label}
             </Link>
           ))}
           <LanguageSwitcher />
@@ -100,7 +100,7 @@ const Navbar = () => {
                 )}
                 aria-current={location.pathname === link.to ? "page" : undefined}
               >
-                {t[link.label]}
+                {link.label}
               </Link>
             ))}
             <a
