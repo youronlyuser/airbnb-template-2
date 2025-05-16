@@ -1,7 +1,12 @@
 
 import React from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { translations } from '@/translations';
 
 const Hero = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+  
   return (
     <div className="relative h-screen min-h-[600px] bg-gray-100">
       {/* Background Image */}
@@ -20,16 +25,16 @@ const Hero = () => {
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
         <div className="max-w-3xl animate-fade-in">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg">
-            Experience a Luxury Stay
+            {t.hero.title}
           </h1>
           <p className="text-xl md:text-2xl text-white mb-8 drop-shadow-md max-w-2xl mx-auto">
-            A cozy getaway with breathtaking views and modern amenities.
+            {t.hero.subtitle}
           </p>
           <a
             href="#contact"
             className="bg-teal-500 hover:bg-teal-600 text-white font-medium px-8 py-3 rounded-md text-lg transition transform hover:scale-105 inline-block"
           >
-            Book Now
+            {t.hero.bookNow}
           </a>
         </div>
       </div>

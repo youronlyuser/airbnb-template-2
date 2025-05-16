@@ -16,9 +16,10 @@ export default function LanguageSwitcher() {
       size="sm"
       onClick={toggleLanguage}
       className="flex items-center gap-2 text-gray-700 hover:text-brand-primary"
+      aria-label={language === 'en' ? 'Switch to Greek' : 'Switch to English'}
     >
       <Globe size={20} />
-      <span>{language.toUpperCase()}</span>
+      <span className="font-medium">{language === 'en' ? 'EN' : 'GR'}</span>
     </Button>
   );
 }

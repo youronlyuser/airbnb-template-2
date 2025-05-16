@@ -1,8 +1,13 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { translations } from '@/translations';
 
 const Footer = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <footer className="bg-gray-900 text-gray-300 py-12">
       <div className="container mx-auto px-4">
@@ -13,33 +18,36 @@ const Footer = () => {
               A luxury vacation rental located in the heart of the coast, offering stunning views and unforgettable experiences.
             </p>
             <p className="text-sm">
-              © {new Date().getFullYear()} Seaside Home. All rights reserved.
+              © {new Date().getFullYear()} Seaside Home. {t.footer.rights}
             </p>
           </div>
           
           <div>
-            <h4 className="text-lg font-medium text-white mb-4">Quick Links</h4>
+            <h4 className="text-lg font-medium text-white mb-4">{t.footer.quickLinks}</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="hover:text-teal-400 transition">Home</Link>
+                <Link to="/" className="hover:text-teal-400 transition">{t.nav.home}</Link>
               </li>
               <li>
-                <Link to="/your-host" className="hover:text-teal-400 transition">Your Host</Link>
+                <Link to="/your-host" className="hover:text-teal-400 transition">{t.nav.yourHost}</Link>
               </li>
               <li>
-                <Link to="/your-place" className="hover:text-teal-400 transition">Your Place</Link>
+                <Link to="/your-place" className="hover:text-teal-400 transition">{t.nav.yourPlace}</Link>
               </li>
               <li>
-                <Link to="/explore" className="hover:text-teal-400 transition">Explore</Link>
+                <Link to="/explore" className="hover:text-teal-400 transition">{t.nav.explore}</Link>
               </li>
               <li>
-                <Link to="/gallery" className="hover:text-teal-400 transition">Gallery</Link>
+                <Link to="/gallery" className="hover:text-teal-400 transition">{t.nav.gallery}</Link>
+              </li>
+              <li>
+                <Link to="/maps" className="hover:text-teal-400 transition">{t.nav.maps}</Link>
               </li>
             </ul>
           </div>
           
           <div>
-            <h4 className="text-lg font-medium text-white mb-4">Contact</h4>
+            <h4 className="text-lg font-medium text-white mb-4">{t.footer.contact}</h4>
             <ul className="space-y-2 text-sm">
               <li className="flex items-start">
                 <svg 

@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
@@ -6,19 +7,21 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { translations } from '@/translations';
 import LanguageSwitcher from './LanguageSwitcher';
 
-const NAV_LINKS = [
-  { to: "/", label: "nav.home" },
-  { to: "/your-host", label: "nav.yourHost" },
-  { to: "/your-place", label: "nav.yourPlace" },
-  { to: "/explore", label: "nav.explore" },
-  { to: "/gallery", label: "nav.gallery" },
-];
-
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const { language } = useLanguage();
+  const t = translations[language];
+
+  const NAV_LINKS = [
+    { to: "/", label: "nav.home" },
+    { to: "/your-host", label: "nav.yourHost" },
+    { to: "/your-place", label: "nav.yourPlace" },
+    { to: "/explore", label: "nav.explore" },
+    { to: "/gallery", label: "nav.gallery" },
+    { to: "/maps", label: "nav.maps" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,10 +57,13 @@ const Navbar = () => {
             <Link
               key={link.to}
               to={link.to}
-              className="font-medium text-gray-700 hover:text-brand-primary transition"
+              className={cn(
+                "font-medium hover:text-brand-primary transition",
+                location.pathname === link.to ? "text-brand-primary" : "text-gray-700"
+              )}
               aria-current={location.pathname === link.to ? "page" : undefined}
             >
-              {translations[language][link.label]}
+              {t[link.label]}
             </Link>
           ))}
           <LanguageSwitcher />
@@ -65,7 +71,7 @@ const Navbar = () => {
             href="#contact"
             className="bg-brand-primary hover:bg-brand-secondary text-white px-4 py-2 rounded-md transition"
           >
-            {translations[language].nav.bookNow}
+            {t.nav.bookNow}
           </a>
         </nav>
 
@@ -88,17 +94,20 @@ const Navbar = () => {
               <Link
                 key={link.to}
                 to={link.to}
-                className="font-medium text-gray-700 hover:text-brand-primary transition py-2"
+                className={cn(
+                  "font-medium hover:text-brand-primary transition py-2",
+                  location.pathname === link.to ? "text-brand-primary" : "text-gray-700"
+                )}
                 aria-current={location.pathname === link.to ? "page" : undefined}
               >
-                {translations[language][link.label]}
+                {t[link.label]}
               </Link>
             ))}
             <a
               href="#contact"
               className="bg-brand-primary hover:bg-brand-secondary text-white px-4 py-2 rounded-md transition inline-block w-full text-center"
             >
-              {translations[language].nav.bookNow}
+              {t.nav.bookNow}
             </a>
           </div>
         </div>
