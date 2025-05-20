@@ -60,7 +60,7 @@ const RatingComponent = () => {
                     className={cn(
                       "transition-all duration-150", 
                       (hover !== null ? hover >= ratingValue : rating !== null && rating >= ratingValue) 
-                        ? "text-yellow-400 fill-yellow-400" 
+                        ? "text-theme-icon-warning fill-theme-icon-warning" 
                         : "text-gray-300"
                     )}
                   />
@@ -71,7 +71,7 @@ const RatingComponent = () => {
           
           <button
             onClick={handleRatingSubmit}
-            className="bg-teal-500 hover:bg-teal-600 text-white font-medium px-6 py-2 rounded-md transition"
+            className="bg-theme-primary hover:bg-theme-primary-dark text-white font-medium px-6 py-2 rounded-md transition"
           >
             {t.rating.submitButton}
           </button>

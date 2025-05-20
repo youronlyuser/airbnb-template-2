@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -131,6 +130,17 @@ export default {
             buttonHover: 'var(--color-theme-navbar-button-hover)',
             mobileBg: 'var(--color-theme-navbar-mobile-bg)',
             shadow: 'var(--color-theme-navbar-shadow)',
+          },
+          icon: {
+            primary: 'var(--color-theme-icon-primary)',
+            secondary: 'var(--color-theme-icon-secondary)',
+            muted: 'var(--color-theme-icon-muted)',
+            accent: 'var(--color-theme-icon-accent)',
+            light: 'var(--color-theme-icon-light)',
+            warning: 'var(--color-theme-icon-warning)',
+            success: 'var(--color-theme-icon-success)',
+            danger: 'var(--color-theme-icon-danger)',
+            info: 'var(--color-theme-icon-info)',
           }
         },
       },

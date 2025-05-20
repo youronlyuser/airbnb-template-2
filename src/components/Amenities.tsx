@@ -6,8 +6,8 @@ import { translations } from '@/translations';
 
 const AmenityItem = ({ icon: Icon, title }: { icon: React.ElementType; title: string }) => (
   <div className="flex flex-col items-center text-center gap-3 p-4">
-    <div className="bg-teal-50 p-3 rounded-full">
-      <Icon size={24} className="text-teal-600" />
+    <div className="bg-theme-yourplace-amenity-bg p-3 rounded-full">
+      <Icon size={24} className="text-theme-icon-primary" />
     </div>
     <span className="text-gray-700 font-medium">{title}</span>
   </div>
@@ -37,9 +37,9 @@ const Amenities = () => {
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
           {language === 'en' ? (
-            <>Our <span className="text-teal-600">Amenities</span></>
+            <>Our <span className="text-theme-primary">Amenities</span></>
           ) : (
-            <>Οι <span className="text-teal-600">Παροχές</span> μας</>
+            <>Οι <span className="text-theme-primary">Παροχές</span> μας</>
           )}
         </h2>
         <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12">

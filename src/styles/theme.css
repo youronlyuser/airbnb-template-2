@@ -1,4 +1,3 @@
-
 /* Theme Color Variables */
 :root {
   /* Primary Colors - Teal */
@@ -67,6 +66,17 @@
   --color-theme-navbar-button-hover: #0d9488;
   --color-theme-navbar-mobile-bg: #ffffff;
   --color-theme-navbar-shadow: rgba(0, 0, 0, 0.05);
+
+  /* Icon Colors */
+  --color-theme-icon-primary: #14b8a6;
+  --color-theme-icon-secondary: #0d9488;
+  --color-theme-icon-muted: #6b7280;
+  --color-theme-icon-accent: #134e4a;
+  --color-theme-icon-light: #ffffff;
+  --color-theme-icon-warning: #f59e0b;
+  --color-theme-icon-success: #10b981;
+  --color-theme-icon-danger: #ef4444;
+  --color-theme-icon-info: #3b82f6;
 }
 
 /* Dark Mode Theme (if needed in the future) */
@@ -132,4 +142,15 @@
   --color-theme-navbar-button-hover: #14b8a6;
   --color-theme-navbar-mobile-bg: #111827;
   --color-theme-navbar-shadow: rgba(0, 0, 0, 0.2);
+
+  /* Icon Colors - Dark Mode */
+  --color-theme-icon-primary: #2dd4bf;
+  --color-theme-icon-secondary: #14b8a6;
+  --color-theme-icon-muted: #94a3b8;
+  --color-theme-icon-accent: #5eead4;
+  --color-theme-icon-light: #ffffff;
+  --color-theme-icon-warning: #fbbf24;
+  --color-theme-icon-success: #34d399;
+  --color-theme-icon-danger: #f87171;
+  --color-theme-icon-info: #60a5fa;
 }

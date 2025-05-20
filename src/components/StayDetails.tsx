@@ -13,9 +13,9 @@ const StayDetails = () => {
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
           {language === 'en' ? (
-            <>Your <span className="text-teal-600">Stay Details</span></>
+            <>Your <span className="text-theme-primary">Stay Details</span></>
           ) : (
-            <><span className="text-teal-600">{t.stayDetails.title}</span></>
+            <><span className="text-theme-primary">{t.stayDetails.title}</span></>
           )}
         </h2>
         
@@ -23,7 +23,7 @@ const StayDetails = () => {
           {/* Bedrooms */}
           <div className="bg-white rounded-xl shadow-sm p-6 flex flex-col items-center text-center hover:shadow-md transition">
             <div className="bg-teal-50 p-4 rounded-full mb-4">
-              <Bed size={32} className="text-teal-600" />
+              <Bed size={32} className="text-theme-icon-primary" />
             </div>
             <h3 className="text-xl font-semibold mb-2">3 {t.stayDetails.bedrooms}</h3>
             <p className="text-gray-600">
@@ -34,7 +34,7 @@ const StayDetails = () => {
           {/* Bathrooms */}
           <div className="bg-white rounded-xl shadow-sm p-6 flex flex-col items-center text-center hover:shadow-md transition">
             <div className="bg-teal-50 p-4 rounded-full mb-4">
-              <Bath size={32} className="text-teal-600" />
+              <Bath size={32} className="text-theme-icon-primary" />
             </div>
             <h3 className="text-xl font-semibold mb-2">2 {t.stayDetails.bathrooms}</h3>
             <p className="text-gray-600">
@@ -45,7 +45,7 @@ const StayDetails = () => {
           {/* Amenities */}
           <div className="bg-white rounded-xl shadow-sm p-6 flex flex-col items-center text-center hover:shadow-md transition">
             <div className="bg-teal-50 p-4 rounded-full mb-4">
-              <CheckSquare size={32} className="text-teal-600" />
+              <CheckSquare size={32} className="text-theme-icon-primary" />
             </div>
             <h3 className="text-xl font-semibold mb-2">{t.stayDetails.amenities}</h3>
             <p className="text-gray-600">
@@ -56,7 +56,7 @@ const StayDetails = () => {
           {/* Private Pool */}
           <div className="bg-white rounded-xl shadow-sm p-6 flex flex-col items-center text-center hover:shadow-md transition">
             <div className="bg-teal-50 p-4 rounded-full mb-4">
-              <Waves size={32} className="text-teal-600" />
+              <Waves size={32} className="text-theme-icon-primary" />
             </div>
             <h3 className="text-xl font-semibold mb-2">{t.stayDetails.pool}</h3>
             <p className="text-gray-600">

@@ -13,9 +13,9 @@ const ReviewCard = () => {
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
           {language === 'en' ? (
-            <>What Our <span className="text-teal-600">Guests Say</span></>
+            <>What Our <span className="text-theme-primary">Guests Say</span></>
           ) : (
-            <><span className="text-teal-600">{t.reviews.title}</span></>
+            <><span className="text-theme-primary">{t.reviews.title}</span></>
           )}
         </h2>
         
@@ -41,7 +41,7 @@ const ReviewCard = () => {
             
             <div className="flex items-center justify-center mb-4">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} size={20} className="text-yellow-400 fill-yellow-400" />
+                <Star key={i} size={20} className="text-theme-icon-warning fill-theme-icon-warning" />
               ))}
             </div>
             

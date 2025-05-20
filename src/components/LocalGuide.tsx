@@ -16,7 +16,7 @@ const GuideCard = ({
   <div className="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
     <div className="flex items-center mb-4">
       <div className="bg-theme-primary-muted p-3 rounded-full mr-4">
-        <Icon size={24} className="text-theme-primary" />
+        <Icon size={24} className="text-theme-icon-primary" />
       </div>
       <h3 className="text-xl font-semibold text-theme-text">{title}</h3>
     </div>
@@ -82,7 +82,7 @@ const LocalGuide = () => {
                 href={item.url} 
                 className="flex items-center justify-center gap-2 bg-white px-5 py-3 rounded-lg border border-gray-200 text-theme-primary hover:bg-theme-primary-muted transition"
               >
-                <FileText size={20} />
+                <FileText size={20} className="text-theme-icon-primary" />
                 <span>{item.title}</span>
               </a>
             ))}

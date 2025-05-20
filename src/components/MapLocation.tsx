@@ -24,7 +24,7 @@ const MapLocation = ({ title, location, description, googleMapsUrl }: MapLocatio
   return (
     <div className="flex flex-col h-full bg-white rounded-lg shadow-md p-6">
       <h3 className="text-lg font-semibold mb-2 text-theme-primary flex items-center">
-        <MapPin className="mr-2 text-theme-primary" size={18} />
+        <MapPin className="mr-2 text-theme-icon-primary" size={18} />
         {title}
       </h3>
       
@@ -50,7 +50,7 @@ const MapLocation = ({ title, location, description, googleMapsUrl }: MapLocatio
           rel="noopener noreferrer"
           className="flex items-center justify-center w-full gap-2 bg-theme-primary text-theme-text-light py-2 px-4 rounded-md hover:bg-theme-primary-dark transition-colors"
         >
-          <ExternalLink size={16} />
+          <ExternalLink size={16} className="text-theme-icon-light" />
           <span>{t.maps.viewOnGoogleMaps}</span>
         </a>
       </div>
