@@ -44,8 +44,8 @@ const Navbar = () => {
     <header className={cn(
       'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
       isScrolled 
-        ? 'bg-white/95 backdrop-blur-sm shadow-sm py-3' 
-        : 'bg-transparent py-5'
+        ? 'bg-theme-navbar-bg backdrop-blur-sm shadow-sm py-3' 
+        : 'bg-theme-navbar-bgTransparent py-5'
     )}>
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link to="/" className="text-xl md:text-2xl font-semibold text-theme-primary">
@@ -58,8 +58,8 @@ const Navbar = () => {
               key={link.to}
               to={link.to}
               className={cn(
-                "font-medium hover:text-theme-primary transition",
-                location.pathname === link.to ? "text-theme-primary" : "text-gray-700"
+                "font-medium hover:text-theme-navbar-hover transition",
+                location.pathname === link.to ? "text-theme-navbar-active" : "text-theme-navbar-text"
               )}
               aria-current={location.pathname === link.to ? "page" : undefined}
             >
@@ -69,7 +69,7 @@ const Navbar = () => {
           <LanguageSwitcher />
           <a
             href="#contact"
-            className="bg-theme-primary hover:bg-theme-primary-dark text-theme-text-light px-4 py-2 rounded-md transition"
+            className="bg-theme-navbar-button hover:bg-theme-navbar-buttonHover text-theme-text-light px-4 py-2 rounded-md transition"
           >
             {t.nav.bookNow}
           </a>
@@ -78,7 +78,7 @@ const Navbar = () => {
         <div className="md:hidden flex items-center gap-4">
           <LanguageSwitcher />
           <button 
-            className="text-gray-700"
+            className="text-theme-navbar-text"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
@@ -88,15 +88,15 @@ const Navbar = () => {
       </div>
 
       {isMenuOpen && (
-        <div className="md:hidden bg-white shadow-md absolute top-full left-0 right-0">
+        <div className="md:hidden bg-theme-navbar-mobileBg shadow-md absolute top-full left-0 right-0">
           <div className="container mx-auto px-4 py-3 flex flex-col space-y-3">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
                 className={cn(
-                  "font-medium hover:text-theme-primary transition py-2",
-                  location.pathname === link.to ? "text-theme-primary" : "text-gray-700"
+                  "font-medium hover:text-theme-navbar-hover transition py-2",
+                  location.pathname === link.to ? "text-theme-navbar-active" : "text-theme-navbar-text"
                 )}
                 aria-current={location.pathname === link.to ? "page" : undefined}
               >
@@ -105,7 +105,7 @@ const Navbar = () => {
             ))}
             <a
               href="#contact"
-              className="bg-theme-primary hover:bg-theme-primary-dark text-theme-text-light px-4 py-2 rounded-md transition inline-block w-full text-center"
+              className="bg-theme-navbar-button hover:bg-theme-navbar-buttonHover text-theme-text-light px-4 py-2 rounded-md transition inline-block w-full text-center"
             >
               {t.nav.bookNow}
             </a>

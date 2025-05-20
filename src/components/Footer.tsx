@@ -9,7 +9,7 @@ const Footer = () => {
   const t = translations[language];
 
   return (
-    <footer className="bg-gray-900 text-gray-300 py-12">
+    <footer className="bg-theme-footer-bg text-theme-footer-text py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
@@ -26,22 +26,22 @@ const Footer = () => {
             <h4 className="text-lg font-medium text-white mb-4">{t.footer.quickLinks}</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="hover:text-teal-400 transition">{t.nav.home}</Link>
+                <Link to="/" className="text-theme-footer-link hover:text-theme-footer-linkHover transition">{t.nav.home}</Link>
               </li>
               <li>
-                <Link to="/your-host" className="hover:text-teal-400 transition">{t.nav.yourHost}</Link>
+                <Link to="/your-host" className="text-theme-footer-link hover:text-theme-footer-linkHover transition">{t.nav.yourHost}</Link>
               </li>
               <li>
-                <Link to="/your-place" className="hover:text-teal-400 transition">{t.nav.yourPlace}</Link>
+                <Link to="/your-place" className="text-theme-footer-link hover:text-theme-footer-linkHover transition">{t.nav.yourPlace}</Link>
               </li>
               <li>
-                <Link to="/explore" className="hover:text-teal-400 transition">{t.nav.explore}</Link>
+                <Link to="/explore" className="text-theme-footer-link hover:text-theme-footer-linkHover transition">{t.nav.explore}</Link>
               </li>
               <li>
-                <Link to="/gallery" className="hover:text-teal-400 transition">{t.nav.gallery}</Link>
+                <Link to="/gallery" className="text-theme-footer-link hover:text-theme-footer-linkHover transition">{t.nav.gallery}</Link>
               </li>
               <li>
-                <Link to="/maps" className="hover:text-teal-400 transition">{t.nav.maps}</Link>
+                <Link to="/maps" className="text-theme-footer-link hover:text-theme-footer-linkHover transition">{t.nav.maps}</Link>
               </li>
             </ul>
           </div>
@@ -52,7 +52,7 @@ const Footer = () => {
               <li className="flex items-start">
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
-                  className="h-5 w-5 mr-2 text-teal-400 shrink-0 mt-0.5" 
+                  className="h-5 w-5 mr-2 text-theme-primary shrink-0 mt-0.5" 
                   fill="none" 
                   viewBox="0 0 24 24" 
                   stroke="currentColor"
@@ -65,7 +65,7 @@ const Footer = () => {
               <li className="flex items-start">
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
-                  className="h-5 w-5 mr-2 text-teal-400 shrink-0 mt-0.5" 
+                  className="h-5 w-5 mr-2 text-theme-primary shrink-0 mt-0.5" 
                   fill="none" 
                   viewBox="0 0 24 24" 
                   stroke="currentColor"
@@ -77,7 +77,7 @@ const Footer = () => {
               <li className="flex items-start">
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
-                  className="h-5 w-5 mr-2 text-teal-400 shrink-0 mt-0.5" 
+                  className="h-5 w-5 mr-2 text-theme-primary shrink-0 mt-0.5" 
                   fill="none" 
                   viewBox="0 0 24 24" 
                   stroke="currentColor"

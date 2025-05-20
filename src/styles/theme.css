@@ -23,6 +23,50 @@
   /* Accent Colors */
   --color-theme-accent: #134e4a;
   --color-theme-accent-light: #99f6e4;
+
+  /* Footer Colors */
+  --color-theme-footer-bg: #1f2937;
+  --color-theme-footer-text: #f3f4f6;
+  --color-theme-footer-link: #d1d5db;
+  --color-theme-footer-link-hover: #5eead4;
+  --color-theme-footer-border: #374151;
+
+  /* Gallery Page Colors */
+  --color-theme-gallery-bg: #f0fdfa;
+  --color-theme-gallery-card: #ffffff;
+  --color-theme-gallery-button: #14b8a6;
+  --color-theme-gallery-button-hover: #0d9488;
+
+  /* Explore Page Colors */
+  --color-theme-explore-bg: #f0fdfa;
+  --color-theme-explore-card-bg: #e6fffa;
+  --color-theme-explore-card-border: #99f6e4;
+  --color-theme-explore-icon: #0d9488;
+
+  /* Your Place Page Colors */
+  --color-theme-yourplace-bg: #f0fdfa;
+  --color-theme-yourplace-tab: #e6fffa; 
+  --color-theme-yourplace-tab-active: #14b8a6;
+  --color-theme-yourplace-amenity-bg: #e6fffa;
+  --color-theme-yourplace-amenity-icon: #0d9488;
+
+  /* Your Host Page Colors */
+  --color-theme-host-bg: #f0fdfa;
+  --color-theme-host-card-bg: #e6fffa;
+  --color-theme-host-testimonial-bg: #e6fffa;
+  --color-theme-host-testimonial-border: #99f6e4;
+  --color-theme-host-badge: #f59e0b;
+
+  /* Navigation Bar Colors */
+  --color-theme-navbar-bg: #ffffff;
+  --color-theme-navbar-bg-transparent: transparent;
+  --color-theme-navbar-text: #1f2937;
+  --color-theme-navbar-active: #14b8a6;
+  --color-theme-navbar-hover: #0d9488;
+  --color-theme-navbar-button: #14b8a6;
+  --color-theme-navbar-button-hover: #0d9488;
+  --color-theme-navbar-mobile-bg: #ffffff;
+  --color-theme-navbar-shadow: rgba(0, 0, 0, 0.05);
 }
 
 /* Dark Mode Theme (if needed in the future) */
@@ -44,4 +88,48 @@
   
   --color-theme-accent: #5eead4;
   --color-theme-accent-light: #99f6e4;
+
+  /* Footer Colors - Dark Mode */
+  --color-theme-footer-bg: #111827;
+  --color-theme-footer-text: #f9fafb;
+  --color-theme-footer-link: #e5e7eb;
+  --color-theme-footer-link-hover: #5eead4;
+  --color-theme-footer-border: #1f2937;
+
+  /* Gallery Page Colors - Dark Mode */
+  --color-theme-gallery-bg: #0f172a;
+  --color-theme-gallery-card: #1e293b;
+  --color-theme-gallery-button: #2dd4bf;
+  --color-theme-gallery-button-hover: #14b8a6;
+
+  /* Explore Page Colors - Dark Mode */
+  --color-theme-explore-bg: #0f172a;
+  --color-theme-explore-card-bg: #1e293b;
+  --color-theme-explore-card-border: #164e63;
+  --color-theme-explore-icon: #2dd4bf;
+
+  /* Your Place Page Colors - Dark Mode */
+  --color-theme-yourplace-bg: #0f172a;
+  --color-theme-yourplace-tab: #1e293b;
+  --color-theme-yourplace-tab-active: #2dd4bf;
+  --color-theme-yourplace-amenity-bg: #1e293b;
+  --color-theme-yourplace-amenity-icon: #2dd4bf;
+
+  /* Your Host Page Colors - Dark Mode */
+  --color-theme-host-bg: #0f172a;
+  --color-theme-host-card-bg: #1e293b;
+  --color-theme-host-testimonial-bg: #1e293b;
+  --color-theme-host-testimonial-border: #164e63;
+  --color-theme-host-badge: #fbbf24;
+
+  /* Navigation Bar Colors - Dark Mode */
+  --color-theme-navbar-bg: #111827;
+  --color-theme-navbar-bg-transparent: transparent;
+  --color-theme-navbar-text: #f3f4f6;
+  --color-theme-navbar-active: #2dd4bf;
+  --color-theme-navbar-hover: #14b8a6;
+  --color-theme-navbar-button: #2dd4bf;
+  --color-theme-navbar-button-hover: #14b8a6;
+  --color-theme-navbar-mobile-bg: #111827;
+  --color-theme-navbar-shadow: rgba(0, 0, 0, 0.2);
 }
