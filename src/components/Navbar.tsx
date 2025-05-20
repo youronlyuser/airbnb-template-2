@@ -48,7 +48,7 @@ const Navbar = () => {
         : 'bg-transparent py-5'
     )}>
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <Link to="/" className="text-xl md:text-2xl font-semibold text-brand-primary">
+        <Link to="/" className="text-xl md:text-2xl font-semibold text-theme-primary">
           Seaside Home
         </Link>
 
@@ -58,8 +58,8 @@ const Navbar = () => {
               key={link.to}
               to={link.to}
               className={cn(
-                "font-medium hover:text-brand-primary transition",
-                location.pathname === link.to ? "text-brand-primary" : "text-gray-700"
+                "font-medium hover:text-theme-primary transition",
+                location.pathname === link.to ? "text-theme-primary" : "text-gray-700"
               )}
               aria-current={location.pathname === link.to ? "page" : undefined}
             >
@@ -69,7 +69,7 @@ const Navbar = () => {
           <LanguageSwitcher />
           <a
             href="#contact"
-            className="bg-brand-primary hover:bg-brand-secondary text-white px-4 py-2 rounded-md transition"
+            className="bg-theme-primary hover:bg-theme-primary-dark text-theme-text-light px-4 py-2 rounded-md transition"
           >
             {t.nav.bookNow}
           </a>
@@ -95,8 +95,8 @@ const Navbar = () => {
                 key={link.to}
                 to={link.to}
                 className={cn(
-                  "font-medium hover:text-brand-primary transition py-2",
-                  location.pathname === link.to ? "text-brand-primary" : "text-gray-700"
+                  "font-medium hover:text-theme-primary transition py-2",
+                  location.pathname === link.to ? "text-theme-primary" : "text-gray-700"
                 )}
                 aria-current={location.pathname === link.to ? "page" : undefined}
               >
@@ -105,7 +105,7 @@ const Navbar = () => {
             ))}
             <a
               href="#contact"
-              className="bg-brand-primary hover:bg-brand-secondary text-white px-4 py-2 rounded-md transition inline-block w-full text-center"
+              className="bg-theme-primary hover:bg-theme-primary-dark text-theme-text-light px-4 py-2 rounded-md transition inline-block w-full text-center"
             >
               {t.nav.bookNow}
             </a>
