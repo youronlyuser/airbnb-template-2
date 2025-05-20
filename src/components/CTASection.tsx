@@ -8,7 +8,7 @@ const CTASection = () => {
   const t = translations[language];
 
   return (
-    <section id="contact" className="py-20 bg-teal-600 text-white">
+    <section id="contact" className="py-20 bg-theme-primary text-theme-text-light">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -22,12 +22,12 @@ const CTASection = () => {
             href="https://airbnb.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-white text-teal-600 font-bold px-8 py-4 rounded-md text-lg shadow-lg hover:bg-gray-100 transition transform hover:scale-105"
+            className="inline-block bg-theme-text-light text-theme-primary font-bold px-8 py-4 rounded-md text-lg shadow-lg hover:bg-gray-100 transition transform hover:scale-105"
           >
             {t.cta.button}
           </a>
           
-          <div className="mt-10 pt-10 border-t border-teal-500 flex justify-center space-x-6">
+          <div className="mt-10 pt-10 border-t border-theme-primary-dark flex justify-center space-x-6">
             <a
               href="https://airbnb.com"
               target="_blank"

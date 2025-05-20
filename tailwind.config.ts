@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -62,14 +63,31 @@ export default {
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))'
         },
-        brand: {
-          primary: '#14b8a6',
-          secondary: '#0d9488',
-          accent: '#5eead4',
-          dark: '#134e4a',
-          light: '#99f6e4',
-          muted: '#ccfbf1',
-          background: '#f0fdfa',
+        // Theme colors - centralized here for easy customization
+        theme: {
+          primary: {
+            DEFAULT: 'var(--color-theme-primary)',
+            light: 'var(--color-theme-primary-light)',
+            dark: 'var(--color-theme-primary-dark)',
+            muted: 'var(--color-theme-primary-muted)',
+          },
+          secondary: {
+            DEFAULT: 'var(--color-theme-secondary)',
+            light: 'var(--color-theme-secondary-light)',
+          },
+          background: {
+            DEFAULT: 'var(--color-theme-background)',
+            alt: 'var(--color-theme-background-alt)',
+          },
+          text: {
+            DEFAULT: 'var(--color-theme-text)',
+            muted: 'var(--color-theme-text-muted)',
+            light: 'var(--color-theme-text-light)',
+          },
+          accent: {
+            DEFAULT: 'var(--color-theme-accent)',
+            light: 'var(--color-theme-accent-light)',
+          }
         },
       },
       borderRadius: {

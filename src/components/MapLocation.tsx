@@ -23,12 +23,12 @@ const MapLocation = ({ title, location, description, googleMapsUrl }: MapLocatio
 
   return (
     <div className="flex flex-col h-full bg-white rounded-lg shadow-md p-6">
-      <h3 className="text-lg font-semibold mb-2 text-brand-primary flex items-center">
-        <MapPin className="mr-2 text-teal-600" size={18} />
+      <h3 className="text-lg font-semibold mb-2 text-theme-primary flex items-center">
+        <MapPin className="mr-2 text-theme-primary" size={18} />
         {title}
       </h3>
       
-      {description && <p className="text-gray-600 mb-4 text-sm">{description}</p>}
+      {description && <p className="text-theme-text-muted mb-4 text-sm">{description}</p>}
       
       {/* Google Maps Embed */}
       <div className="w-full h-48 rounded-md overflow-hidden mb-4">
@@ -48,7 +48,7 @@ const MapLocation = ({ title, location, description, googleMapsUrl }: MapLocatio
           href={mapUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center w-full gap-2 bg-teal-600 text-white py-2 px-4 rounded-md hover:bg-teal-700 transition-colors"
+          className="flex items-center justify-center w-full gap-2 bg-theme-primary text-theme-text-light py-2 px-4 rounded-md hover:bg-theme-primary-dark transition-colors"
         >
           <ExternalLink size={16} />
           <span>{t.maps.viewOnGoogleMaps}</span>

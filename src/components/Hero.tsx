@@ -8,7 +8,7 @@ const Hero = () => {
   const t = translations[language];
   
   return (
-    <div className="relative h-screen min-h-[600px] bg-gray-100">
+    <div className="relative h-screen min-h-[600px] bg-theme-background">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
@@ -24,15 +24,15 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
         <div className="max-w-3xl animate-fade-in">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-theme-text-light mb-4 drop-shadow-lg">
             {t.hero.title}
           </h1>
-          <p className="text-xl md:text-2xl text-white mb-8 drop-shadow-md max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-theme-text-light mb-8 drop-shadow-md max-w-2xl mx-auto">
             {t.hero.subtitle}
           </p>
           <a
             href="#contact"
-            className="bg-teal-500 hover:bg-teal-600 text-white font-medium px-8 py-3 rounded-md text-lg transition transform hover:scale-105 inline-block"
+            className="bg-theme-primary hover:bg-theme-primary-dark text-theme-text-light font-medium px-8 py-3 rounded-md text-lg transition transform hover:scale-105 inline-block"
           >
             {t.hero.bookNow}
           </a>

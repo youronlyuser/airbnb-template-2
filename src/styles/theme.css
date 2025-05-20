@@ -1,0 +1,47 @@
+
+/* Theme Color Variables */
+:root {
+  /* Primary Colors - Teal */
+  --color-theme-primary: #14b8a6;
+  --color-theme-primary-dark: #0d9488;
+  --color-theme-primary-light: #5eead4;
+  --color-theme-primary-muted: #ccfbf1;
+  
+  /* Secondary Colors */
+  --color-theme-secondary: #0d9488;
+  --color-theme-secondary-light: #99f6e4;
+  
+  /* Background Colors */
+  --color-theme-background: #f0fdfa;
+  --color-theme-background-alt: #f8f8f8;
+  
+  /* Text Colors */
+  --color-theme-text: #1f2937;
+  --color-theme-text-muted: #6b7280;
+  --color-theme-text-light: #ffffff;
+  
+  /* Accent Colors */
+  --color-theme-accent: #134e4a;
+  --color-theme-accent-light: #99f6e4;
+}
+
+/* Dark Mode Theme (if needed in the future) */
+.dark {
+  --color-theme-primary: #2dd4bf;
+  --color-theme-primary-dark: #14b8a6;
+  --color-theme-primary-light: #5eead4;
+  --color-theme-primary-muted: #134e4a;
+  
+  --color-theme-secondary: #0d9488;
+  --color-theme-secondary-light: #5eead4;
+  
+  --color-theme-background: #0f172a;
+  --color-theme-background-alt: #1e293b;
+  
+  --color-theme-text: #f8fafc;
+  --color-theme-text-muted: #94a3b8;
+  --color-theme-text-light: #ffffff;
+  
+  --color-theme-accent: #5eead4;
+  --color-theme-accent-light: #99f6e4;
+}

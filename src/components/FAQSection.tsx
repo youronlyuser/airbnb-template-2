@@ -18,9 +18,9 @@ const FAQSection = () => {
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
           {language === 'en' ? (
-            <>Frequently Asked <span className="text-teal-600">Questions</span></>
+            <>Frequently Asked <span className="text-theme-primary">Questions</span></>
           ) : (
-            <><span className="text-teal-600">{t.faq.title}</span></>
+            <><span className="text-theme-primary">{t.faq.title}</span></>
           )}
         </h2>
         
@@ -28,10 +28,10 @@ const FAQSection = () => {
           <Accordion type="single" collapsible className="w-full">
             {t.faq.questions.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="text-lg font-medium text-gray-800">
+                <AccordionTrigger className="text-lg font-medium text-theme-text">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-600">
+                <AccordionContent className="text-theme-text-muted">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
